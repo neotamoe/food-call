@@ -16,7 +16,9 @@ Users can post information about leftover/unwanted food (e.g. title, image, loca
 
 TODO:
 - [ ] finish Sign Up Form
-- [ ] finish Food Call cards
+- [X] finish Food Call cards
+- [ ] fix Food Call cards metadata styling
+- [ ] fix image src paths once know where/how storing images
 - [ ] Select authentication (AWS-based vs Firebase vs oauth)
 - [ ] select backend/database for storing food posts
 - [ ] Figure out how long to keep posts on main page (max # displayed vs time period) and how to do auto-purge
