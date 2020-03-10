@@ -1,22 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
+import Wrapper from './Wrapper'
+import Card from './Card'
 
-const Wrapper = styled.div`
-  width: 33%;
-  display: inline-block;
-`
-const Card = styled.div`
-  border: 1px solid grey;
-  width: 90%;
-  margin: 20px;
-  height: 400px;
-  text-align: center;
-`
 const Title = styled.h1`
   font-size: 1.5em;
   text-align: center;
   color: purple;
-`;
+`
 
 const Image = styled.img`
   width: 90%;

@@ -3,6 +3,7 @@ import './App.css';
 import FoodCard from './components/FoodCard'
 import Heading from './components/Heading'
 import SignUp from './components/SignUp'
+import About from './components/About'
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <FoodCard name="Ice Cream" postedBy="vivi" description="melting" location="Sci123" imgSrc="/assets/sandwich-2301387_640.jpg" imgAlt="ice cream"/>
       </div>
       <div>
+        <About />
         <SignUp />
       </div>
     </div>
