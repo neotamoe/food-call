@@ -22,8 +22,8 @@ const Wrapper = styled.div`
 const InputLabel = (props) => {
   return (
     <Wrapper>
-      <Label>{props.label}</Label>
-      <Input type={props.type} placeholder={props.placeholder}/>
+      {props.label ? <Label>{props.label}</Label> : null}
+      <Input type={props.type} placeholder={props.placeholder} accept={props.accept ? props.accept : ''}/>
     </Wrapper>
   )
 }

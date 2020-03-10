@@ -4,6 +4,7 @@ import FoodCard from './components/FoodCard'
 import Heading from './components/Heading'
 import SignUp from './components/SignUp'
 import About from './components/About'
+import Post from './components/Post'
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
       <div>
         <About />
         <SignUp />
+        <Post />
       </div>
     </div>
   );
