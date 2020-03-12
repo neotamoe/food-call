@@ -1,0 +1,16 @@
+import React from 'react'
+import styled from 'styled-components'
+
+const StyledInput = styled.input`
+  width: 100%;
+  height: 30px;
+  display: inline;
+`
+
+const Input = (props) => {
+  return (
+      <StyledInput type={props.type} placeholder={props.placeholder} accept={props.accept ? props.accept : ''}/>
+  )
+}
+
+export default Input
