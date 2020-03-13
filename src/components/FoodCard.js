@@ -10,7 +10,14 @@ const Title = styled.h1`
 `
 
 const Image = styled.img`
+  // max-width: 90%;
+  // max-height: 200px;
+  // width: auto;
+  // height: auto;
+  // overflow-y: hidden;
+  object-fit: cover;
   width: 90%;
+  height: 190px;
 `
 
 const foodCard = (props) => {

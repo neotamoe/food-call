@@ -14,9 +14,9 @@ function App() {
       </header>
       <div>
         <FoodCard name="Penne Pasta" postedBy="moen2" description="leftover pasta after catering event" location="Sci123" imgSrc="/assets/sandwich-2301387_640.jpg" imgAlt="pasta"/>
-        <FoodCard name="Cookies" postedBy="stottrb" description="only oatmeal raisin" location="Sci123" imgSrc="/assets/sandwich-2301387_640.jpg" imgAlt="cookies"/>
+        <FoodCard name="Cookies" postedBy="stottrb" description="only oatmeal raisin" location="Sci123" imgSrc="/assets/spaghetti.jpg" imgAlt="cookies"/>
         <FoodCard name="Sandwiches" postedBy="eli_sam" description="from jimmy john's" location="Sci123" imgSrc="/assets/sandwich-2301387_640.jpg" imgAlt="sandwiches"/>
-        <FoodCard name="Ice Cream" postedBy="vivi" description="melting" location="Sci123" imgSrc="/assets/sandwich-2301387_640.jpg" imgAlt="ice cream"/>
+        <FoodCard name="Ice Cream" postedBy="vivi" description="melting" location="Sci123" imgSrc="/assets/spaghetti.jpg" imgAlt="ice cream"/>
       </div>
       <div>
         <About />
