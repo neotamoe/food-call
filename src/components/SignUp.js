@@ -4,8 +4,9 @@ import Input from './Input'
 import Label from './Label'
 import Wrapper from './Wrapper'
 import Card from './Card'
-import Checkbox from './Checkbox'
 import FormGroup from './FormGroup'
+import FormControlLabel from '@material-ui/core/FormControlLabel'
+import Checkbox from '@material-ui/core/Checkbox'
 
 const SignUp = () => {
   return (
@@ -18,12 +19,20 @@ const SignUp = () => {
           <Input type="email" placeholder="Enter your email"/>
         </FormGroup>
         <FormGroup>
-          <Checkbox />
-          <Label name="I want to post..." display="inline"/>
+          <FormControlLabel
+            value="post"
+            control={<Checkbox color="primary" />}
+            label="I want to post..."
+            labelPlacement="end"
+          />
         </FormGroup>
         <FormGroup>
-          <Checkbox />
-          <Label name="I want to receive email notifications" display="inline"/>
+          <FormControlLabel
+            value="receive"
+            control={<Checkbox color="primary" />}
+            label="I want to receive email notifications..."
+            labelPlacement="end"
+          />
         </FormGroup>
       </Card>
     </Wrapper>  
