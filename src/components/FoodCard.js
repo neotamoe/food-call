@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import Wrapper from './Wrapper'
 import Card from './Card'
+import Grid from '@material-ui/core/Grid'
 
 const Title = styled.h1`
   font-size: 1.5em;
@@ -24,7 +24,7 @@ const foodCard = (props) => {
   const dateTime = new Date()
   const dateFormatted = dateTime.toUTCString()
   return (
-    <Wrapper>
+    <Grid xs={12} sm={6} med={4}>
       <Card> 
         <Title>{props.name}</Title>
         <Image src={props.imgSrc} alt={props.imgAlt}/>
@@ -33,7 +33,7 @@ const foodCard = (props) => {
         <p>Description: {props.description}</p>
         <p>Location: {props.location}</p>
       </Card>
-    </Wrapper>
+    </Grid>
   )
 }
 

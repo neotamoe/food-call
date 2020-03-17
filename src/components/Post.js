@@ -1,14 +1,14 @@
 import React from 'react'
 import Heading from './Heading'
-import Wrapper from './Wrapper'
 import Card from './Card'
 import Input from './Input'
 import Label from './Label'
 import FormGroup from './FormGroup'
+import Grid from '@material-ui/core/Grid'
 
 const Post = () => {
   return (
-    <Wrapper>
+    <Grid xs={12}>
       <Card>
         <Heading title="Post Your Food Call"/>
         <form>
@@ -37,7 +37,7 @@ const Post = () => {
           </FormGroup>
         </form>
       </Card>
-    </Wrapper>  
+    </Grid>  
   )
 }
 

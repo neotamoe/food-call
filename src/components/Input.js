@@ -5,6 +5,7 @@ const StyledInput = styled.input`
   width: 100%;
   height: 30px;
   display: inline;
+  padding-left: 10px;
 `
 
 const Input = (props) => {
