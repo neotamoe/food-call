@@ -10,7 +10,13 @@ const StyledInput = styled.input`
 
 const Input = (props) => {
   return (
-      <StyledInput type={props.type} placeholder={props.placeholder} accept={props.accept ? props.accept : ''}/>
+      <StyledInput 
+        type={props.type} 
+        placeholder={props.placeholder} 
+        accept={props.accept ? props.accept : ''}
+        id={props.id ? props.id : ''}
+        style={props.style}
+      />
   )
 }
 
