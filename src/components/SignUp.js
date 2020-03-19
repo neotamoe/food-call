@@ -10,7 +10,7 @@ import Grid from '@material-ui/core/Grid'
 
 const SignUp = () => {
   return (
-    <Grid xs={12}>
+    <Grid xs={12} sm={6}>
       <Card>
         <Heading title="Sign Up"/>
         <p>Sign up to post a Food Call or receive emails when new food calls are posted.</p>

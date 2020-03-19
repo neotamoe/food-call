@@ -9,7 +9,7 @@ import Button from '@material-ui/core/Button'
 
 const Post = () => {
   return (
-    <Grid xs={12}>
+    <Grid xs={12} sm={6}>
       <Card>
         <Heading title="Post Your Food Call"/>
         <form>
