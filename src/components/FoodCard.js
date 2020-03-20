@@ -24,7 +24,7 @@ const foodCard = (props) => {
   const dateTime = new Date()
   const dateFormatted = dateTime.toUTCString()
   return (
-    <Grid xs={12} sm={6} med={4}>
+    <Grid item={true} xs={12} sm={6} med={4}>
       <Card> 
         <Title>{props.name}</Title>
         <Image src={props.imgSrc} alt={props.imgAlt}/>

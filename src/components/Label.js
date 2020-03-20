@@ -8,7 +8,7 @@ const StyledLabel = styled.label`
 
 const Label = (props) => {
   return (
-      <StyledLabel style={{display: props.display}}>{props.name}</StyledLabel>
+      <StyledLabel style={{display: props.display}}>{props.label}</StyledLabel>
   )
 }
 

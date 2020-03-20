@@ -10,12 +10,15 @@ const StyledInput = styled.input`
 
 const Input = (props) => {
   return (
-      <StyledInput 
+      <StyledInput
+        name={props.name} 
+        ref={props.ref}
         type={props.type} 
         placeholder={props.placeholder} 
         accept={props.accept ? props.accept : ''}
         id={props.id ? props.id : ''}
         style={props.style}
+        value={props.value}
       />
   )
 }

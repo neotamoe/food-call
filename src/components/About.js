@@ -6,7 +6,7 @@ import Divider from '@material-ui/core/Divider'
 
 const About = () => {
   return (
-    <Grid xs={12}>
+    <Grid item={true} xs={12}>
       <Divider variant="middle"/>
       <Card>
         <Heading title="About Augsburg Food Call"/>
