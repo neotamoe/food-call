@@ -12,7 +12,7 @@ const Input = (props) => {
   return (
       <StyledInput
         name={props.name} 
-        ref={props.ref}
+        ref={props.inputRef}
         type={props.type} 
         placeholder={props.placeholder} 
         accept={props.accept ? props.accept : ''}

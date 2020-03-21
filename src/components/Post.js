@@ -20,7 +20,7 @@ const Post = () => {
         <form onSubmit={handleSubmit(onFormSubmit)}>
           <FormGroup>
             <Input
-              forwardRef={register}
+              inputRef={register}
               style={{display: 'none'}}
               accept="image/*"
               id="upload-food-image"
@@ -35,19 +35,19 @@ const Post = () => {
           </FormGroup>
           <FormGroup>
             <Label for="food" label="What food is it?" display="block"/>
-            <Input id="food" name="food" forwardRef={register} type="text" placeholder="What is it?"/>
+            <Input id="food" name="food" inputRef={register} type="text" placeholder="What is it?"/>
           </FormGroup>
           <FormGroup>
             <Label for="description" label="Tell me more..." display="block"/>
-            <Input id="description" name="description" forwardRef={register} type="text" placeholder="Add a description (optional)"/>
+            <Input id="description" name="description" inputRef={register} type="text" placeholder="Add a description (optional)"/>
           </FormGroup>
           <FormGroup>
             <Label for="location" label="Where is it?" display="block"/>
-            <Input id="location" name="location" forwardRef={register} type="text" placeholder="Where is it?"/>
+            <Input id="location" name="location" inputRef={register} type="text" placeholder="Where is it?"/>
           </FormGroup>
           <FormGroup>
             <Label for="poster" label="Who are you?" display="block"/>
-            <Input id="poster" name="poster" forwardRef={register} type="text" placeholder="Who are you? (optional)"/>
+            <Input id="poster" name="poster" inputRef={register} type="text" placeholder="Who are you? (optional)"/>
           </FormGroup>
           <FormGroup>
             <Button variant="contained" color="primary" type="submit">Submit</Button>
