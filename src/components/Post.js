@@ -8,6 +8,7 @@ import Label from './Label'
 import FormGroup from './FormGroup'
 import Grid from '@material-ui/core/Grid'
 import Button from '@material-ui/core/Button'
+import InputError from './InputError'
 
 const Post = () => {
   const { register, handleSubmit, watch, errors } = useForm()
@@ -35,7 +36,8 @@ const Post = () => {
           </FormGroup>
           <FormGroup>
             <Label for="food" label="What food is it?" display="block"/>
-            <Input id="food" name="food" inputRef={register} type="text" placeholder="What is it?"/>
+            <Input id="food" name="food" inputRef={register({required: true})} type="text" placeholder="What is it?"/>
+            {errors.food && <InputError>This field is required</InputError>}
           </FormGroup>
           <FormGroup>
             <Label for="description" label="Tell me more..." display="block"/>
@@ -43,7 +45,8 @@ const Post = () => {
           </FormGroup>
           <FormGroup>
             <Label for="location" label="Where is it?" display="block"/>
-            <Input id="location" name="location" inputRef={register} type="text" placeholder="Where is it?"/>
+            <Input id="location" name="location" inputRef={register({required: true})} type="text" placeholder="Where is it?"/>
+            {errors.location && <InputError>This field is required</InputError>}
           </FormGroup>
           <FormGroup>
             <Label for="poster" label="Who are you?" display="block"/>
