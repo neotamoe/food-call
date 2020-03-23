@@ -35,7 +35,7 @@ const Post = () => {
             </label>
           </FormGroup>
           <FormGroup>
-            <Label for="food" label="What food is it?" display="block"/>
+            <Label for="food" label="What food is it?*" display="block"/>
             <Input id="food" name="food" inputRef={register({required: true})} type="text" placeholder="What is it?"/>
             {errors.food && <InputError>This field is required</InputError>}
           </FormGroup>
@@ -44,7 +44,7 @@ const Post = () => {
             <Input id="description" name="description" inputRef={register} type="text" placeholder="Add a description (optional)"/>
           </FormGroup>
           <FormGroup>
-            <Label for="location" label="Where is it?" display="block"/>
+            <Label for="location" label="Where is it?*" display="block"/>
             <Input id="location" name="location" inputRef={register({required: true})} type="text" placeholder="Where is it?"/>
             {errors.location && <InputError>This field is required</InputError>}
           </FormGroup>

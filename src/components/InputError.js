@@ -11,4 +11,4 @@ const InputError = props => {
   )
 }
 
-export default StyledSpan;
+export default InputError;
