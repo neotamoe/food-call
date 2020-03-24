@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useForm } from 'react-hook-form'
 
 import Heading from './Heading'
@@ -13,13 +13,16 @@ import Button from '@material-ui/core/Button'
 
 const SignUp = props => {
   const { register, handleSubmit, errors } = useForm()
-  const onFormSubmit = data => {console.log('is this working?'); console.log(data)}
-  // state = { checked: false }
+  const onFormSubmit = data => {console.log(typeof data.post); console.log(typeof data.receive); console.log(data)}
   const handleCheckboxChange = event => {
     console.log(`event.target.name: ${event.target.name}`)
     console.log(`event.target.checked: ${event.target.checked}`)
-    // this.setState({ checked: event.target.checked })
+    setState({ ...state, [event.target.name]: event.target.checked });
   }
+  const [state, setState] = useState({
+    post: false,
+    receive: false
+  });
   
     return (
     <Grid item={true} xs={12} sm={6}>
@@ -35,7 +38,7 @@ const SignUp = props => {
             <FormControlLabel
               value="post"
               onChange={handleCheckboxChange}
-              control={<Checkbox ref={props.inputRef} color="primary" name="post" />}
+              control={<Checkbox ref={props.inputRef} value={state.post} color="primary" name="post" onChange={handleCheckboxChange} />}
               label="I want to post..."
               labelPlacement="end"
               inputRef={register}
@@ -44,8 +47,7 @@ const SignUp = props => {
           <FormGroup>
             <FormControlLabel
               value="receive"
-              onChange={handleCheckboxChange}
-              control={<Checkbox ref={props.inputRef} color="primary" name="receive" />}
+              control={<Checkbox ref={props.inputRef} value={state.receive} color="primary" name="receive" onChange={handleCheckboxChange} />}
               label="I want to receive email notifications..."
               labelPlacement="end"
               inputRef={register}
