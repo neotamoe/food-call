@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useForm } from 'react-hook-form'
 
 import Heading from './Heading'
@@ -13,16 +13,7 @@ import Button from '@material-ui/core/Button'
 
 const SignUp = props => {
   const { register, handleSubmit, errors } = useForm()
-  const onFormSubmit = data => {console.log(typeof data.post); console.log(typeof data.receive); console.log(data)}
-  const handleCheckboxChange = event => {
-    console.log(`event.target.name: ${event.target.name}`)
-    console.log(`event.target.checked: ${event.target.checked}`)
-    setState({ ...state, [event.target.name]: event.target.checked });
-  }
-  const [state, setState] = useState({
-    post: false,
-    receive: false
-  });
+  const onFormSubmit = (data, e) => {console.log(typeof e.target[0].checked); console.log(typeof e.target[1].checked); console.log('type of data.post: '+typeof data.post); console.log('typeof data.receive '+ typeof data.receive); console.log(data)}
   
     return (
     <Grid item={true} xs={12} sm={6}>
@@ -36,9 +27,12 @@ const SignUp = props => {
           </FormGroup>
           <FormGroup>
             <FormControlLabel
-              value="post"
-              onChange={handleCheckboxChange}
-              control={<Checkbox ref={props.inputRef} value={state.post} color="primary" name="post" onChange={handleCheckboxChange} />}
+              control={
+                <Checkbox 
+                  ref={props.inputRef} 
+                  color="primary" 
+                  name="post" 
+                />}
               label="I want to post..."
               labelPlacement="end"
               inputRef={register}
@@ -46,8 +40,12 @@ const SignUp = props => {
           </FormGroup>
           <FormGroup>
             <FormControlLabel
-              value="receive"
-              control={<Checkbox ref={props.inputRef} value={state.receive} color="primary" name="receive" onChange={handleCheckboxChange} />}
+              control={
+                <Checkbox 
+                  ref={props.inputRef} 
+                  color="primary" 
+                  name="receive" 
+                />}
               label="I want to receive email notifications..."
               labelPlacement="end"
               inputRef={register}
