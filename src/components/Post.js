@@ -20,6 +20,16 @@ const Post = () => {
         <Heading title="Post Your Food Call"/>
         <form onSubmit={handleSubmit(onFormSubmit)}>
           <FormGroup>
+            <Label for="food" label="What food is it?*" display="block"/>
+            <Input id="food" name="food" inputRef={register({required: true})} type="text" placeholder="What is it?"/>
+            {errors.food && <InputError>This field is required</InputError>}
+          </FormGroup>
+          <FormGroup>
+            <Label for="location" label="Where is it?*" display="block"/>
+            <Input id="location" name="location" inputRef={register({required: true})} type="text" placeholder="Where is it?"/>
+            {errors.location && <InputError>This field is required</InputError>}
+          </FormGroup>
+          <FormGroup>
             <Input
               inputRef={register}
               style={{display: 'none'}}
@@ -35,18 +45,8 @@ const Post = () => {
             </label>
           </FormGroup>
           <FormGroup>
-            <Label for="food" label="What food is it?*" display="block"/>
-            <Input id="food" name="food" inputRef={register({required: true})} type="text" placeholder="What is it?"/>
-            {errors.food && <InputError>This field is required</InputError>}
-          </FormGroup>
-          <FormGroup>
             <Label for="description" label="Tell me more..." display="block"/>
             <Input id="description" name="description" inputRef={register} type="text" placeholder="Add a description (optional)"/>
-          </FormGroup>
-          <FormGroup>
-            <Label for="location" label="Where is it?*" display="block"/>
-            <Input id="location" name="location" inputRef={register({required: true})} type="text" placeholder="Where is it?"/>
-            {errors.location && <InputError>This field is required</InputError>}
           </FormGroup>
           <FormGroup>
             <Label for="poster" label="Who are you?" display="block"/>

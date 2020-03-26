@@ -6,9 +6,15 @@ const StyledLabel = styled.label`
   margin-bottom: 5px;
 `
 
+const StyledLeftDiv = styled.div`
+  text-align: left;
+`
+
 const Label = (props) => {
   return (
+    <StyledLeftDiv>
       <StyledLabel style={{display: props.display}}>{props.label}</StyledLabel>
+    </StyledLeftDiv>
   )
 }
 

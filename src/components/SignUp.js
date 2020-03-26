@@ -1,4 +1,5 @@
 import React from 'react'
+import styled from 'styled-components'
 import { useForm } from 'react-hook-form'
 
 import Heading from './Heading'
@@ -10,6 +11,10 @@ import Checkbox from '@material-ui/core/Checkbox'
 import Grid from '@material-ui/core/Grid'
 import InputError from './InputError'
 import Button from '@material-ui/core/Button'
+
+const StyledDiv = styled.div`
+  text-align: left;
+`
 
 const SignUp = props => {
   const { register, handleSubmit, errors } = useForm()
@@ -25,32 +30,34 @@ const SignUp = props => {
             <Input id="email" name="email" type="email" placeholder="Enter your email" inputRef={register({required: true})} />
             {errors.email && <InputError>This field is required</InputError>}
           </FormGroup>
-          <FormGroup>
-            <FormControlLabel
-              control={
-                <Checkbox 
-                  ref={props.inputRef} 
-                  color="primary" 
-                  name="post" 
-                />}
-              label="I want to post..."
-              labelPlacement="end"
-              inputRef={register}
-            />
-          </FormGroup>
-          <FormGroup>
-            <FormControlLabel
-              control={
-                <Checkbox 
-                  ref={props.inputRef} 
-                  color="primary" 
-                  name="receive" 
-                />}
-              label="I want to receive email notifications..."
-              labelPlacement="end"
-              inputRef={register}
-            />
-          </FormGroup>
+          <StyledDiv>
+            <FormGroup>
+              <FormControlLabel
+                control={
+                  <Checkbox 
+                    ref={props.inputRef} 
+                    color="primary" 
+                    name="post" 
+                  />}
+                label="I want to post..."
+                labelPlacement="end"
+                inputRef={register}
+              />
+            </FormGroup>
+            <FormGroup>
+              <FormControlLabel
+                control={
+                  <Checkbox 
+                    ref={props.inputRef} 
+                    color="primary" 
+                    name="receive" 
+                  />}
+                label="I want to receive email notifications..."
+                labelPlacement="end"
+                inputRef={register}
+              />
+            </FormGroup>
+          </StyledDiv>
           <FormGroup>
             <Button variant="contained" color="primary" type="submit">Submit</Button>
           </FormGroup>
