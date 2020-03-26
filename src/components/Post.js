@@ -11,8 +11,8 @@ import Button from '@material-ui/core/Button'
 import InputError from './InputError'
 
 const Post = () => {
-  const { register, handleSubmit, watch, errors } = useForm()
-  const onFormSubmit = data => {console.log('is this working?'); console.log(data)}
+  const { register, handleSubmit, errors } = useForm()
+  const onFormSubmit = data => { console.log(data) }
   
   return (
     <Grid item={true} xs={12} sm={6}>
