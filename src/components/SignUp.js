@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import { useForm } from 'react-hook-form'
 
@@ -11,14 +11,23 @@ import Checkbox from '@material-ui/core/Checkbox'
 import Grid from '@material-ui/core/Grid'
 import InputError from './InputError'
 import Button from '@material-ui/core/Button'
+import CircularProgress from '@material-ui/core/CircularProgress'
 
 const StyledDiv = styled.div`
   text-align: left;
 `
 
 const SignUp = props => {
+  const [isSubmitting, setIsSubmitting] = useState(false)
   const { register, handleSubmit, errors } = useForm()
-  const onFormSubmit = (data, e) => {console.log(typeof e.target[0].checked); console.log(typeof e.target[1].checked); console.log('type of data.post: '+typeof data.post); console.log('typeof data.receive '+ typeof data.receive); console.log(data)}
+  const onFormSubmit = (data, e) => {
+    console.log(typeof e.target[0].checked); 
+    console.log(typeof e.target[1].checked); 
+    console.log('type of data.post: '+typeof data.post); 
+    console.log('typeof data.receive '+ typeof data.receive); 
+    console.log(data)
+    setIsSubmitting(true)
+  }
   
     return (
     <Grid item={true} xs={12} sm={6}>
@@ -59,7 +68,14 @@ const SignUp = props => {
             </FormGroup>
           </StyledDiv>
           <FormGroup>
-            <Button variant="contained" color="primary" type="submit">Submit</Button>
+            <Button variant="contained" color="primary" type="submit">
+              Submit
+            </Button>
+            {
+              isSubmitting 
+              ? <CircularProgress style={{marginBottom: '-15px', marginLeft: '20px'}}/>
+              : null
+            }
           </FormGroup>
         </form>
       </Card>
