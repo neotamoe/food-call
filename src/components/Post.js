@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useForm } from 'react-hook-form'
 
 import Heading from './Heading'
@@ -9,11 +9,16 @@ import FormGroup from './FormGroup'
 import Grid from '@material-ui/core/Grid'
 import Button from '@material-ui/core/Button'
 import InputError from './InputError'
+import CircularProgress from '@material-ui/core/CircularProgress'
 
 const Post = () => {
   const { register, handleSubmit, errors } = useForm()
-  const onFormSubmit = data => { console.log(data) }
-  
+  const onFormSubmit = data => { 
+    console.log(data)
+    setIsSubmitting(true) 
+  }
+  const [isSubmitting, setIsSubmitting] = useState(false)
+
   return (
     <Grid item={true} xs={12} sm={6}>
       <Card>
@@ -54,6 +59,11 @@ const Post = () => {
           </FormGroup>
           <FormGroup>
             <Button variant="contained" color="primary" type="submit">Submit</Button>
+            {
+              isSubmitting 
+              ? <CircularProgress style={{marginBottom: '-15px', marginLeft: '20px'}}/>
+              : null
+            }
           </FormGroup>
         </form>
       </Card>
