@@ -7,16 +7,29 @@ import About from './components/About'
 import Post from './components/Post'
 import Grid from '@material-ui/core/Grid'
 import Footer from './components/Footer'
+import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
+
+const theme = createMuiTheme({
+  palette: {
+    primary: {
+      main: '#660033'
+    },
+    secondary: {
+      main: '#666666'
+    },
+  }
+});
 
 function App() {
   return (
+    <ThemeProvider theme={theme}>
     <div className="App">
       <Heading title="Augsburg Food Call"/>
       <Grid container>
-        <FoodCard name="Penne Pasta" postedBy="moen2" description="leftover pasta after catering event" location="Sci123" imgSrc="/assets/sandwich-2301387_640.jpg" imgAlt="pasta"/>
-        <FoodCard name="Cookies" postedBy="stottrb" description="only oatmeal raisin" location="Sci123" imgSrc="/assets/spaghetti.jpg" imgAlt="cookies"/>
-        <FoodCard name="Sandwiches" postedBy="eli_sam" description="from jimmy john's" location="Sci123" imgSrc="/assets/sandwich-2301387_640.jpg" imgAlt="sandwiches"/>
-        <FoodCard name="Ice Cream" postedBy="vivi" description="melting" location="Sci123" imgSrc="/assets/spaghetti.jpg" imgAlt="ice cream"/>
+        <FoodCard name="Penne Pasta" postedBy="moen2" description="leftover pasta after catering event" location="Sci123" imgSrc="/assets/sandwich-2301387_640.jpg" />
+        <FoodCard name="Cookies" postedBy="stottrb" description="only oatmeal raisin" location="Sci123" imgSrc="/assets/spaghetti.jpg" />
+        <FoodCard name="Sandwiches" postedBy="eli_sam" description="from jimmy john's" location="Sci123" imgSrc="/assets/sandwich-2301387_640.jpg" />
+        <FoodCard name="Ice Cream" postedBy="vivi" description="melting" location="Sci123" imgSrc="/assets/spaghetti.jpg" />
       </Grid>
       <Grid container>
         <SignUp />
@@ -28,6 +41,7 @@ function App() {
         </Grid>
       </Footer>
     </div>
+    </ThemeProvider>
   );
 }
 
