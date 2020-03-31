@@ -26,13 +26,15 @@ const Post = () => {
         <form onSubmit={handleSubmit(onFormSubmit)}>
           <FormGroup>
             <Label for="food" label="What food is it?*" display="block"/>
-            <Input id="food" name="food" inputRef={register({required: true})} type="text" placeholder="What is it?"/>
-            {errors.food && <InputError>This field is required</InputError>}
+            <Input id="food" name="food" inputRef={register({required: true, maxLength: 50})} type="text" placeholder="What is it?"/>
+            {errors.food && errors.food.type === 'required' && <InputError>This field is required</InputError>}
+            {errors.food && errors.food.type === 'maxLength' && <InputError>Max length of 50 characters exceeded</InputError> }
           </FormGroup>
           <FormGroup>
             <Label for="location" label="Where is it?*" display="block"/>
-            <Input id="location" name="location" inputRef={register({required: true})} type="text" placeholder="Where is it?"/>
-            {errors.location && <InputError>This field is required</InputError>}
+            <Input id="location" name="location" inputRef={register({required: true, maxLength: 100})} type="text" placeholder="Where is it?"/>
+            {errors.location && errors.location.type === 'required' && <InputError>This field is required</InputError>}
+            {errors.location && errors.location.type === 'maxLength' && <InputError>Max length of 100 characters exceeded</InputError> }
           </FormGroup>
           <FormGroup>
             <Input
@@ -51,11 +53,13 @@ const Post = () => {
           </FormGroup>
           <FormGroup>
             <Label for="description" label="Tell me more..." display="block"/>
-            <Input id="description" name="description" inputRef={register} type="text" placeholder="Add a description (optional)"/>
+            <Input id="description" name="description" inputRef={register({maxLength: 150})} type="text" placeholder="Add a description (optional)"/>
+            {errors.description && errors.description.type === 'maxLength' && <InputError>Max length of 150 characters exceeded</InputError> }
           </FormGroup>
           <FormGroup>
             <Label for="poster" label="Who are you?" display="block"/>
-            <Input id="poster" name="poster" inputRef={register} type="text" placeholder="Who are you? (optional)"/>
+            <Input id="poster" name="poster" inputRef={register({maxLength: 25})} type="text" placeholder="Who are you? (optional)"/>
+            {errors.poster && errors.poster.type === 'maxLength' && <InputError>Max length of 25 characters exceeded</InputError> }
           </FormGroup>
           <FormGroup>
             <Button variant="contained" color="primary" type="submit">Submit</Button>
