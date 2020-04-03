@@ -1,5 +1,9 @@
 ## Food Call
-Food Call provides the Augsburg University campus a way to give and receive leftover or unwanted food.  
+Food Call provides the Augsburg University campus a way to give and receive leftover or unwanted food.  WIP
+
+## Inspiration
+Inspired by the MIT Media Lab FoodCam as shown in this Vox video about food waste.
+https://www.vox.com/videos/2017/5/9/15594598/food-waste-dumbest-environmental 
 
 ## How it Works
 Users can post information about leftover/unwanted food (e.g. title, image, location, description).  Food Call notifies users by email, tweets, and website.
@@ -15,9 +19,9 @@ Users can post information about leftover/unwanted food (e.g. title, image, loca
 - Food Call is sent via Twitter, to subscribed users via email, and to the website.
 
 TODO:
-- [ ] finish Sign Up Form
+- [X] finish Sign Up Form
 - [X] finish Food Call cards
-- [ ] fix Food Call cards metadata styling
+- [X] fix Food Call cards metadata styling
 - [ ] fix image src paths once know where/how storing images
 - [ ] Select authentication (AWS-based vs Firebase vs oauth)
 - [ ] select backend/database for storing food posts
